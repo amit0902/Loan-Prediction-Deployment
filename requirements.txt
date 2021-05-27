@@ -1,4 +1,0 @@
-streamlit
-xgboost
-pandas
-numpy
