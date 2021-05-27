@@ -1,0 +1,1 @@
+web: sh.setup.sh && streamlit run testcheck1.py
