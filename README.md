@@ -100,21 +100,68 @@ Housing Finance company deals in all kinds of home loans. They have presence acr
 	- People having Credit History as per guidelines and Loan_Amount_Term of 1,5, & 10 Years have got Loan approval
 - Dependent Variable [Target]
 	- Almost 70% have Loan Approved
- #### 5. Inferences
- - Observations
-	 - Gender and Self_Employed have no significant effect on Loan_Status
-	 - If an applicant is Graduated having property in Semi-Urban area and is Married with 2 Dependents and Credit History as per Guidelines with Loan_Amount_Term of 1,5,10 Year then Loan is Approved
+- Observations
+	- Gender and Self_Employed have no significant effect on Loan_Status
+	- If an applicant is Graduated having property in Semi-Urban area and is Married with 2 Dependents and Credit History as per Guidelines with Loan_Amount_Term of 1,5,10 Year then Loan is Approved
 - Hypothesis
 	- It is not necessary that higher income means higher loan amount for both Applicant Income and Coapplicant Income
 	- Gender & Self_Employed is not a criteria for considering Loan Approval
 	- Higher Loan Amount Lesser the chance of getting Loan Approved
 
 ### *💠 Stage III: Data Processing*
+<p>
+    <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/lifecycle-of-automatic-data-processing-for-analytics.jpg">
+    <em>Image Credits: Hitech BPO Services</em>
+</p>
+
+#### 1. Treating Null Values
+
+- Mode Imputation on Gender and Married Feature <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Mode%20Imputation.PNG">
+- Conditional Imputation for *Dependents, Credit History, Self Employed* <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Conditional%20Imputation.PNG">
+- Conditional Imputation for *Loan Amount* <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Loan%20Amount.PNG">
+- Conditional Imputation for *Loan Amount Term* <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Loan%20Amount%20Term.PNG">
+- Mapping *Property Area* 
+<img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Mapping%20Property%20Area.PNG">
+
+#### *Null Values after Treatment*
+|Train Data|Test Data|
+|----------|---------|
+| <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/train%20null.png"> | <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/test%20null.png">|
+
+#### 2. Treating Outliers
+
+<p>
+    <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Treating%20Outliers.PNG" width=120%>
+    <em>Data Transformation</em>
+</p>
+
+#### *Pictoral Representation of different Transformation approach*
+<img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/TransformationAnalysis_LoanAmount.png">
+
+#### 3. Encoding (Categorical to Numerical)
+
+- Label Encoding of target variable: *Loan Status*
+  <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Label%20Encoding.PNG">
+- One Hot Encoding of Non-Ordinal and Independent Features: *Gender, Married, Education, Self Employed*
+  <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/One%20Hot%20Encoding.PNG">
 
 ### *💠 Stage IV: Modelling*
 
+- Overall Train set has 25 Columns and Test has 24 respectively.
+- We find the Best Features by ranking them using Carboost Classifier and select Top 15 Features for building Classification Model.
+- Furthermore, we also balance data by Upsampling them with SMOTE analysis
+  - SMOTE (Synthetic Minority Oversampling Technique) analysis helps model get equal chances to classify output
+  <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Oversampling.PNG">
+  - Select Top 15 Features
+  <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Top%2015%20Features.PNG">
+
 ### *💠 Stage V: Feature Engineering*
+<img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Slide24.PNG">
 
-### *💠 Stage VI: Rebuild Model*
+- Source for Interest Rate : [HDFC- Housing Loans] (https://www.hdfc.com/housing-loans/home-loan-interest-rates)  
+- Source for EMI Formula : [Bajaj Finserv EMI Calculator] (https://www.bajajfinserv.in/home-loan-emi-calculator)
 
-### *💠 Stage VII: Predictions*
+### *💠 Stage VI: Model Summary*
+
+- In total 17 Classification Models are approached with: *Stratified K-fold, Train, Validation, ROC-AUC Score, Accuracy, Precision, Recall, and F1-Score*
+<img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Slide29.PNG">
