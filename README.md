@@ -141,9 +141,11 @@ Housing Finance company deals in all kinds of home loans. They have presence acr
 #### 3. Encoding (Categorical to Numerical)
 
 - Label Encoding of target variable: *Loan Status*
+  
   <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/Label%20Encoding.PNG">
 - One Hot Encoding of Non-Ordinal and Independent Features: *Gender, Married, Education, Self Employed*
-  <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/One%20Hot%20Encoding.PNG">
+ 
+ <img src="https://github.com/amit0902/Loan-Prediction-Deployment/blob/main/One%20Hot%20Encoding.PNG">
 
 ### *💠 Stage IV: Modelling*
 
